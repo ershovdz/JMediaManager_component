@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param name="flash_panel_width" type="text" default="1075px" label="Width of the Flash Panel(in px or %)" description="Width of the Flash panel"/>
+		<param name="flash_panel_height" type="text" default="700px" label="Height of the Flash Panel(in px or %)" description="Height of the Flash panel"/>
+		<param name="flash_panel_background" type="text" default="0xFFFFFF" label="Color of the background" description="Color for the background of the Flash Panel"/>
+		<param name="flash_panel_win_color" type="text" default="0xEAEAEA" label="Color of the Flash Panel" description="Color of the Flash Panel"/>
+		<param name="flash_panel_font_color" type="text" default="0x222222" label="Font color" description="Font color"/>
+		<param name="default_language" type="list" default="en_EN" label="Default language" description="Default language">
+		  <option value="en_US">English</option>
+		  <option value="ru_RU">Русский</option>
+		  <option value="fr_FR">Français</option>
+		  <option value="gr_GR">Deutsch</option>
+		</param>
+	</params>
+</config>

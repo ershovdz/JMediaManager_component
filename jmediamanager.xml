@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.5.0">
+	<name>JMediaManager</name>
+	<creationDate>2009-03-30</creationDate>
+	<author>JMediaManager</author>
+	<authorEmail>support@jmediamanager.com</authorEmail>
+	<authorUrl>http://www.jmediamanager.com</authorUrl>
+	<copyright>Copyright 2009 by Slashes &amp; Dots Sdn Bhd. All rights reserved</copyright>
+	<license>License Info</license>
+	<version>1.2.0</version>
+	<description>JMediaManager is a component for Joomla!</description>
+	<files>
+		<filename>index.html</filename>
+		<filename>tmp/index.html</filename>
+		<filename>jmediamanager.php</filename>
+		<filename>controller.php</filename>
+		<filename>plugin.class.php</filename>
+		<filename>views/index.html</filename>
+		<filename>views/browser/index.html</filename>
+		<filename>views/browser/tmpl/index.html</filename>
+		<filename>views/browser/tmpl/default.php</filename>
+		<filename>views/browser/view.html.php</filename>
+		<filename>controllers/index.html</filename>
+		<filename>controllers/server.php</filename>
+		<filename>controllers/browser.php</filename>
+		<filename>plugins/content_plugin/content.plugin.php</filename>
+		<filename>plugins/content_plugin/index.html</filename>
+		<filename>plugins/datsogallery_plugin/datsogallery.plugin.php</filename>
+		<filename>plugins/datsogallery_plugin/index.html</filename>
+		<filename>views/browser/tmpl/addIcon.png</filename>
+		<filename>views/browser/tmpl/deleteIcon.png</filename>
+		<filename>views/browser/tmpl/down.png</filename>
+		<filename>views/browser/tmpl/english.png</filename>
+		<filename>views/browser/tmpl/framework_4.0.0.14159.swz</filename>
+		<filename>views/browser/tmpl/france.png</filename>
+		<filename>views/browser/tmpl/germany.png</filename>
+		<filename>views/browser/tmpl/JMediaManager.swf</filename>
+		<filename>views/browser/tmpl/left.png</filename>
+		<filename>views/browser/tmpl/playerProductInstall.swf</filename>
+		<filename>views/browser/tmpl/right.png</filename>
+		<filename>views/browser/tmpl/rpc_4.0.0.14159.swz</filename>
+		<filename>views/browser/tmpl/russian_federation.png</filename>
+		<filename>views/browser/tmpl/spark_4.0.0.14159.swz</filename>
+		<filename>views/browser/tmpl/osmf_flex.4.0.0.13495.swz</filename>
+		<filename>views/browser/tmpl/sparkskins_4.0.0.14159.swz</filename>
+		<filename>views/browser/tmpl/swfobject.js</filename>
+		<filename>views/browser/tmpl/textLayout_1.0.0.595.swz</filename>
+		<filename>views/browser/tmpl/up.png</filename>
+		<filename>views/browser/tmpl/uploadIcon.png</filename>
+	</files>
+	<languages>
+			<language tag="en-GB">languages/front/en-GB.com_jmediamanager.ini</language>
+			<language tag="ru-RU">languages/front/ru-RU.com_jmediamanager.ini</language>
+		</languages>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<administration>
+		<menu link="option=com_jmediamanager" img="components/com_jmediamanager/assets/icons/main.png">JMediaManager</menu>
+		<files>
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>license.txt</filename>
+			<filename>controller.php</filename>
+			<filename>admin.jmediamanager.php</filename>
+			<filename>admin.jmediamanager.html.php</filename>
+			<filename>toolbar.jmediamanager.php</filename>
+			<filename>toolbar.jmediamanager.html.php</filename>
+			<filename>install.mysql.utf8.sql</filename>
+			<filename>uninstall.mysql.utf8.sql</filename>
+			<filename>css/toolbar.css</filename>
+			<filename>assets/icons/main.png</filename>
+			<filename>assets/icons/main48.png</filename>
+			<filename>library/jmm/index.html</filename>
+			<filename>library/jmm/jmm.adminfilesystem.php</filename>
+			<filename>library/jmm/xml/index.html</filename>
+			<filename>library/jmm/xml/jmm.xml.domit.php</filename>
+			<filename>library/jmm/xml/jmm.xml.simplexml.php</filename>
+			<filename>library/jmm/xml/jmm.xml.xml.php</filename>
+			<filename>library/pcl/index.html</filename>
+			<filename>library/pcl/pcl.pclziplib.php</filename>
+			<filename>library/pcl/pcl.tar.php</filename>
+			<filename>helper/exception.php</filename>
+			<filename>helper/functions.php</filename>
+			<filename>helper/installer.php</filename>
+			<filename>helper/index.html</filename>
+			<filename>tmp/index.html</filename>
+			<filename>controllers/index.html</filename>
+			<filename>controllers/component.php</filename>
+		</files>
+		<languages>
+			<language tag="en-GB">languages/admin/en-GB.com_jmediamanager.ini</language>
+			<language tag="ru-RU">languages/admin/ru-RU.com_jmediamanager.ini</language>
+		</languages>
+	</administration>
+</install>

@@ -1,0 +1,26 @@
+
+.canvasButtonStyle {
+    cornerRadius: 0;
+    backgroundColor: #ffffff;
+    border-style: solid;
+}
+
+.labelEditorStyle {
+    cornerRadius: 0;
+    backgroundColor: #FFFFFF;
+    border-style: none;
+       backgroundAlpha: 0;
+       color: #666666;
+    textAlign: left;
+    fontWeight: bold;
+    fontFamily: Arial;
+       fontSize: 11;
+}
+
+.hyperlinkStyle {
+       color: #666666;
+    textAlign: center;
+    fontWeight: bold;
+    fontFamily: Arial;
+       fontSize: 11;
+}
