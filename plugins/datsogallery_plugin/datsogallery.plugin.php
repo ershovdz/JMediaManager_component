@@ -614,10 +614,10 @@ class DatsoGallery_Plugin extends CJmmPlugin
 				//$title = iconv('UTF-8', 'windows-1251', $title);
 				$query = "INSERT INTO #__datsogallery(id,catid,imgtitle,imgauthor,imgtext," . 
 						 "imgdate,imgcounter,ordering,imgvotes,imgvotesum,published,imgoriginalname," . 
-						 "checked_out,owner_id,approved,useruploaded) VALUES" .
+						 "owner_id,approved,useruploaded) VALUES" .
 						 " (NULL,'$catid'," . $db->Quote($title) . ",". $db->Quote($imgAuthor) . 
 						 "," . $db->Quote($imgDescription) . ",'$batchtime','0','$ordering','0','0'," . 
-						 $db->Quote($imgPublished) . ", '$newfilename','0','$owner_id',1," . $useruploaded  . ")";
+						 $db->Quote($imgPublished) . ", '$newfilename','$owner_id',1," . $useruploaded  . ")";
 				$db->setQuery( $query );	
 				if (!$db->query()) 
 				{
@@ -805,9 +805,9 @@ class DatsoGallery_Plugin extends CJmmPlugin
 			$ordering = $res+1;
 			
 			$query = "INSERT INTO #__datsogallery(id,catid,imgtitle,imgauthor,imgtext,imgdate,"
-			. "imgcounter,ordering,imgvotes,imgvotesum,published,imgoriginalname,checked_out,owner_id,approved,useruploaded) "
+			. "imgcounter,ordering,imgvotes,imgvotesum,published,imgoriginalname,owner_id,approved,useruploaded) "
 			. " VALUES (NULL,'$catid'," . $db->Quote($imgTitle) . ",". $db->Quote($imgAuthor) . "," . $db->Quote($imgDescription) . 
-			",'$batchtime','0','$ordering','0','0','1','$newfilename','0','$owner_id','1','" . !$isAdmin  . "')";
+			",'$batchtime','0','$ordering','0','0','1','$newfilename','$owner_id','1','" . !$isAdmin  . "')";
 			$db->setQuery( $query );	
 			if (!$db->query()) 
 			{
