@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
-<install type="component" version="1.5.0">
+<install type="component" version="1.5.0" method="upgrade">
 	<name>JMediaManager</name>
 	<creationDate>2009-03-30</creationDate>
 	<author>JMediaManager</author>
@@ -8,7 +8,7 @@
 	<authorUrl>http://www.jmediamanager.com</authorUrl>
 	<copyright>Copyright 2009 by Slashes &amp; Dots Sdn Bhd. All rights reserved</copyright>
 	<license>License Info</license>
-	<version>1.2.0</version>
+	<version>1.3.0</version>
 	<description>JMediaManager is a component for Joomla!</description>
 	<files>
 		<filename>index.html</filename>
@@ -27,7 +27,9 @@
 		<filename>plugins/content_plugin/content.plugin.php</filename>
 		<filename>plugins/content_plugin/index.html</filename>
 		<filename>plugins/datsogallery_plugin/datsogallery.plugin.php</filename>
+		<filename>plugins/joomgallery_plugin/joomgallery.plugin.php</filename>
 		<filename>plugins/datsogallery_plugin/index.html</filename>
+		<filename>plugins/joomgallery_plugin/index.html</filename>
 		<filename>views/browser/tmpl/addIcon.png</filename>
 		<filename>views/browser/tmpl/deleteIcon.png</filename>
 		<filename>views/browser/tmpl/down.png</filename>

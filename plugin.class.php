@@ -64,7 +64,7 @@ class CJmmPlugin implements IJmmPlugin
 	{
 		$this->xmlHeader();
 		echo "<response>\n";
-		echo "8880\n";
+		echo "0\n";
 		echo "</response>\n";
 	}
 	public function xmlSuccessUploadResponse(/*$url,*/ $id)

@@ -11,4 +11,5 @@ CREATE TABLE IF NOT EXISTS `#__jmm_plugin` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 INSERT INTO `#__jmm_plugin` (`id`, `name`, `author`, `authoremail`, `version`, `status`) VALUES
-('', 'DatsoGallery_Plugin', 'Alexandr Ershov', 'support@jmediamanager.com', '1.0', 1);
+('', 'DatsoGallery_Plugin', 'Alexandr Ershov', 'support@jmediamanager.com', '1.2', 0),
+('', 'JoomGallery_Plugin', 'Alexandr Ershov', 'support@jmediamanager.com', '1.2', 0);

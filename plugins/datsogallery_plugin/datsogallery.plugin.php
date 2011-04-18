@@ -110,7 +110,7 @@ class DatsoGallery_Plugin extends CJmmPlugin
 			
 			$photoTree[] = array(   
 									'id'         	=> $row->id
-									,'imgtitle'     => $row->imgtext . $ext
+									,'imgtitle'     => $row->imgtitle . $ext
 									,'imgauthor'    => $row->imgauthor
 									,'imgdate'    	=> $row->imgdate
 									,'description'  => $row->imgtext

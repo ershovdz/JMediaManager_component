@@ -30,11 +30,6 @@ class CJmmControllerComponent extends CJmmController
 		$query = "SELECT * FROM #__jmm_plugin";
 		$db->setQuery( $query );
 		$rows = $db->loadObjectList();
-		if(count($rows) > 1)
-		{
-			$rows = null;
-		}
-		
 		if ($db->getErrorNum()) 
 		{
 			throw new CJmmException('Could not connect to the database');
@@ -60,16 +55,22 @@ class CJmmControllerComponent extends CJmmController
 			$cid		= array(JFilterInput::clean(@$cid[0], 'cmd'));
 			$option		= JRequest::getCmd('option');
 			
-
+			$query = 'SELECT name FROM #__jmm_plugin' .
+			' WHERE id = '.$db->Quote($cid[0]);
+			$db->setQuery($query);
+			$rows = $db->loadObjectList();
+			
+			if ($db->getErrorNum()) throw new CJmmException($db->stderr());
+			if(!count($rows)) throw new CJmmException(JText::_('Plugin not found'));
 			
 			$query = 'DELETE FROM #__jmm_plugin' .
-					' WHERE id = '.$db->Quote($cid[0]);
+			' WHERE id = '.$db->Quote($cid[0]);
 			$db->setQuery($query);
 			$db->query();		
 			
 			if ($db->getErrorNum()) throw new CJmmException($db->stderr());
 			
-			$plg_folder	= JPATH_COMPONENT_SITE . DS . 'plugins' . DS . strtolower("DatsoGallery_Plugin");
+			$plg_folder	= JPATH_COMPONENT_SITE . DS . 'plugins' . DS . strtolower($rows[0]->name);
 
 			if (!is_dir( $plg_folder)) 
 			{
@@ -91,16 +92,26 @@ class CJmmControllerComponent extends CJmmController
 	
 	function createPluginInstance($id)
 	{
-		$pluginFile = strtolower(str_replace("_", ".", str_replace(" ", ".", "DatsoGallery_Plugin"))) . ".php";
+		$db	   = & JFactory::getDBO();
+		$query = "SELECT * FROM #__jmm_plugin WHERE `id`=" . $db->Quote($id) . " LIMIT 1";
+		$db->setQuery($query);
 		
-		if(!file_exists(JPATH_COMPONENT_SITE . DS . 'plugins' . DS . strtolower("DatsoGallery_Plugin") . DS . $pluginFile))
+		$actPlg = $db->loadObjectList();
+		if ($db->getErrorNum()) 
+		{
+			return false;
+		}
+		
+		$pluginFile = strtolower(str_replace("_", ".", str_replace(" ", ".", $actPlg[0]->name))) . ".php";
+		
+		if(!file_exists(JPATH_COMPONENT_SITE . DS . 'plugins' . DS . strtolower($actPlg[0]->name) . DS . $pluginFile))
 		{
 			throw new CJmmException('Could not find plugin file');
 		}
 		
-		require_once( JPATH_COMPONENT_SITE . DS . 'plugins' . DS . strtolower("DatsoGallery_Plugin") . DS . $pluginFile );
+		require_once( JPATH_COMPONENT_SITE . DS . 'plugins' . DS . strtolower($actPlg[0]->name) . DS . $pluginFile );
 		
-		$plgClass = "DatsoGallery_Plugin";
+		$plgClass = $actPlg[0]->name;
 		
 		$this->plg_instance = new $plgClass();
 	}
