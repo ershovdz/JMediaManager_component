@@ -200,6 +200,14 @@ class DatsoGallery_Plugin extends CJmmPlugin
 						
 						if($youcanmove)
 						{
+							$db->setQuery("SELECT parent FROM #__datsogallery_catg WHERE cid='".(int)$to_modify->param3."' LIMIT 1");
+							$parent = $db->loadResult();
+							
+							if($parent == (int)$node_id)
+							{
+								return DB_ERROR;
+							}
+							
 							$db->setQuery( "update #__datsogallery_catg set parent='".(int)$to_modify->param3."' where cid='".(int)$node_id."' ");
 							$result = $db->query();
 							if($result)
